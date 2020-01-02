@@ -27,7 +27,9 @@ public class PlayerHealthController : MonoBehaviour
         currentHealth -= 1;
         if(currentHealth <= 0)
         {
+            currentHealth = 0;
             gameObject.SetActive(false);
         }
+        UIController.instance.UpdateHealthDisplay();
     }
 }
