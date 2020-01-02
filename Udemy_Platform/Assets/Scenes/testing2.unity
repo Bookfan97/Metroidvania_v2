@@ -323,6 +323,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 5009643308320006075, guid: 2457927266e12124badeafcdd2050bbd,
+        type: 3}
+      propertyPath: knockBackLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009643308320006075, guid: 2457927266e12124badeafcdd2050bbd,
+        type: 3}
+      propertyPath: knockbackForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5009643308320006078, guid: 2457927266e12124badeafcdd2050bbd,
         type: 3}
       propertyPath: m_LocalPosition.x
