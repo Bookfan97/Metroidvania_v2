@@ -22,6 +22,7 @@ public class DamagePlayer : MonoBehaviour
         if(other.tag == "Player")
         {
             Debug.Log("You may wanna step away, that hurt");
+            PlayerHealthController.instance.DealDamage();
         }
     }
 }
