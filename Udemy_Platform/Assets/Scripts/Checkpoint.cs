@@ -23,6 +23,7 @@ public class Checkpoint : MonoBehaviour
         {
             CheckpointController.instance.DeactivateChecpoints();
             theSR.sprite = cpOn;
+            CheckpointController.instance.SetSpawnPoint(transform.position);
         }
     }
     public void ResetCheckPoint()
