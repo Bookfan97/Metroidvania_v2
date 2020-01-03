@@ -834,6 +834,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 4456549572884168672, guid: da643a6edf7c78744bf74f9e69129060,
     type: 3}
+  collectible: {fileID: 9104478126342793823, guid: 467dc2392ef12af4fb0e746cb4884f5d,
+    type: 3}
+  chanceToDrop: 25
 --- !u!1 &716839624
 GameObject:
   m_ObjectHideFlags: 0
