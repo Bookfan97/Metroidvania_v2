@@ -23,6 +23,7 @@ public class StompBox : MonoBehaviour
             Debug.Log("Yo you hit me");
             other.transform.parent.gameObject.SetActive(false);
             Instantiate(deathEffect, other.transform.position, other.transform.rotation);
+            PlayerController.instance.Bounce();
         }
     }
 }
