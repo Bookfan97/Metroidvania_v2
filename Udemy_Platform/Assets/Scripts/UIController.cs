@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
     public static UIController instance;
     public Image heart1, heart2, heart3;
     public Sprite heartFull, heartHalf, heartEmpty;
+    public Text gemText;
     private void Awake()
     {
         instance = this;
@@ -21,7 +22,7 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateGemCount();
     }
     public void UpdateHealthDisplay()
     {
@@ -63,5 +64,9 @@ public class UIController : MonoBehaviour
                 heart3.sprite = heartEmpty;
                 break;
         }
+    }
+    public void UpdateGemCount()
+    {
+        gemText.text = LevelManager.instance.GemsCollected.ToString();
     }
 }
