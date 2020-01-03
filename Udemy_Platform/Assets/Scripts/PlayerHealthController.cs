@@ -9,6 +9,7 @@ public class PlayerHealthController : MonoBehaviour
     public float invincibleLength;
     private float invincibleCounter;
     private SpriteRenderer theSR;
+    public GameObject deathEffect;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class PlayerHealthController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
+                Instantiate(deathEffect, transform.position, transform.rotation);
                 LevelManager.instance.RespawnPlayer();
             }
             else
