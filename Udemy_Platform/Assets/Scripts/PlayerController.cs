@@ -43,12 +43,14 @@ public class PlayerController : MonoBehaviour
                 if (isGrounded)
                 {
                     theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                    AudioManager.instance.PlaySFX(10);
                 }
                 else
                 {
                     if (canDoubleJump)
                     {
                         theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                        AudioManager.instance.PlaySFX(10);
                         canDoubleJump = false;
                     }
                 }
@@ -87,5 +89,6 @@ public class PlayerController : MonoBehaviour
     public void Bounce()
     {
         theRB.velocity = new Vector2(theRB.velocity.x, bounceForce);
+        AudioManager.instance.PlaySFX(10);
     }
 }
