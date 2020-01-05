@@ -21,7 +21,7 @@ public class StompBox : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag=="Enemy")
+        if(other.CompareTag("Enemy"))
         {
             Debug.Log("Yo you hit me");
             other.transform.parent.gameObject.SetActive(false);
