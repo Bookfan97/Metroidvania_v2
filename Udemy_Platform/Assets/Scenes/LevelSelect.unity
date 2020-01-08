@@ -3112,6 +3112,11 @@ PrefabInstance:
       propertyPath: isLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
+        type: 3}
+      propertyPath: levelToLoad
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 4907771194656939312, guid: c24e4e47283318a4b8946746bfae6e9a,
         type: 3}
       propertyPath: m_Name
@@ -3499,6 +3504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
+        type: 3}
+      propertyPath: levelToLoad
+      value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 4907771194656939312, guid: c24e4e47283318a4b8946746bfae6e9a,
         type: 3}
