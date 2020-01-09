@@ -28,4 +28,10 @@ public class AudioManager : MonoBehaviour
         soundEffects[soundToPlay].pitch = Random.Range(.9f, 1.1f);
         soundEffects[soundToPlay].Play();
     }
+
+    public void PlayLevelVictory()
+    {
+        bgm.Stop();
+        levelEndMusic.Play();
+    }
 }

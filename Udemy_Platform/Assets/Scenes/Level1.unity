@@ -6590,6 +6590,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.87
       objectReference: {fileID: 0}
+    - target: {fileID: 9217042651714723533, guid: a7724833f9fc8ba46bf5009f78efdaa6,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9217042651912603451, guid: a7724833f9fc8ba46bf5009f78efdaa6,
         type: 3}
       propertyPath: m_LocalPosition.z

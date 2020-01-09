@@ -2454,6 +2454,11 @@ PrefabInstance:
       propertyPath: left
       value: 
       objectReference: {fileID: 925355772}
+    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
+        type: 3}
+      propertyPath: isLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4907771194656939312, guid: c24e4e47283318a4b8946746bfae6e9a,
         type: 3}
       propertyPath: m_Name
@@ -3580,7 +3585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1460568208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4147,6 +4152,11 @@ PrefabInstance:
       propertyPath: right
       value: 
       objectReference: {fileID: 925355772}
+    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
+        type: 3}
+      propertyPath: isLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4907771194656939312, guid: c24e4e47283318a4b8946746bfae6e9a,
         type: 3}
       propertyPath: m_Name
@@ -4244,6 +4254,11 @@ PrefabInstance:
       propertyPath: right
       value: 
       objectReference: {fileID: 1483933643}
+    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
+        type: 3}
+      propertyPath: isLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4907771194656939312, guid: c24e4e47283318a4b8946746bfae6e9a,
         type: 3}
       propertyPath: m_Name
@@ -4341,6 +4356,11 @@ PrefabInstance:
       propertyPath: left
       value: 
       objectReference: {fileID: 1483933643}
+    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
+        type: 3}
+      propertyPath: isLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4907771194656939312, guid: c24e4e47283318a4b8946746bfae6e9a,
         type: 3}
       propertyPath: m_Name
@@ -4593,21 +4613,6 @@ PrefabInstance:
         type: 3}
       propertyPath: isLevel
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
-        type: 3}
-      propertyPath: levelToLoad
-      value: Level1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
-        type: 3}
-      propertyPath: levelToCheck
-      value: Level1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147598373423606593, guid: c24e4e47283318a4b8946746bfae6e9a,
-        type: 3}
-      propertyPath: levelName
-      value: '1: The Beginning'
       objectReference: {fileID: 0}
     - target: {fileID: 4907771194656939312, guid: c24e4e47283318a4b8946746bfae6e9a,
         type: 3}
