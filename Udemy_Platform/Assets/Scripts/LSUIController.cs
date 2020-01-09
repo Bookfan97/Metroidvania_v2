@@ -9,6 +9,8 @@ public class LSUIController : MonoBehaviour
     public Image fadeScreen;
     public float fadeSpeed;
     private bool shouldFadeToBlack, shouldFadeFromBlack;
+    public GameObject levelInfoPanel;
+    public Text levelName;
     private void Awake()
     {
         instance = this;
@@ -50,5 +52,16 @@ public class LSUIController : MonoBehaviour
     {
         shouldFadeToBlack = false;
         shouldFadeFromBlack = true;
+    }
+    public void ShowInfo(MapPoint levelInfo)
+    {
+        levelName.text = levelInfo.levelName;
+        levelInfoPanel.SetActive(true);
+
+    }
+
+    public void HideInfo()
+    {
+        levelInfoPanel.SetActive(false);
     }
 }
