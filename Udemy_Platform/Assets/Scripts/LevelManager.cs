@@ -10,14 +10,16 @@ public class LevelManager : MonoBehaviour
     public int GemsCollected;
     public string levelToLoad;
     public float timeInLevel;
+
     private void Awake()
     {
         instance = this;
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        timeInLevel = 0;
+        timeInLevel = 0f;
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         timeInLevel += Time.deltaTime;
     }
+
     public void RespawnPlayer()
     {
         StartCoroutine(RespawnCo());
@@ -36,7 +39,7 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.PlaySFX(8);
         yield return new WaitForSeconds(waitToRespawn - (1f/UIController.instance.fadeSpeed));
         UIController.instance.FadeToBlack();
-        yield return new WaitForSeconds((1f / UIController.instance.fadeSpeed) + 0.2f);
+        yield return new WaitForSeconds((1f/UIController.instance.fadeSpeed) + .2f);
         UIController.instance.FadeFromBlack();
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.transform.position = CheckpointController.instance.spawnPoint;
@@ -57,11 +60,11 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         UIController.instance.FadeToBlack();
         yield return new WaitForSeconds((1f / UIController.instance.fadeSpeed) + 3f);
-        PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_unlocked", 1);
-        if(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name+"_gems"))
+        PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
+        if (PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_gems"))
         {
-            if(GemsCollected > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_gems"))
+            if (GemsCollected > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_gems"))
             {
                 PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_gems", GemsCollected);
             }
