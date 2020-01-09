@@ -51,7 +51,7 @@ public class LSPlayer : MonoBehaviour
                     SetNextPoint(currentPoint.down);
                 }
             }
-            if(currentPoint.isLevel)
+            if(currentPoint.isLevel && currentPoint.levelToLoad !="" && !currentPoint.isLocked)
             {
                 if(Input.GetButtonDown("Jump"))
                 {
