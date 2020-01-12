@@ -23,9 +23,7 @@ public class BossActivator : MonoBehaviour
         if (other.tag == "Player")
         {
             theBossBattle.SetActive(true);
-
             gameObject.SetActive(false);
-
             AudioManager.instance.PlayBossMusic();
         }
     }

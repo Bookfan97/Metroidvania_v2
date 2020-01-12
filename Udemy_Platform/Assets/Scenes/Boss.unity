@@ -5153,6 +5153,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2598915042452481160, guid: a7724833f9fc8ba46bf5009f78efdaa6,
+        type: 3}
+      propertyPath: levelToLoad
+      value: VictoryScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 4828209149201440938, guid: a7724833f9fc8ba46bf5009f78efdaa6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5167,6 +5172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level Pack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368113547948204260, guid: a7724833f9fc8ba46bf5009f78efdaa6,
+        type: 3}
+      propertyPath: maxHeight
+      value: 7.08
       objectReference: {fileID: 0}
     - target: {fileID: 6403763226312989358, guid: a7724833f9fc8ba46bf5009f78efdaa6,
         type: 3}
@@ -5316,7 +5326,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
