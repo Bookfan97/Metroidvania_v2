@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossTankController : MonoBehaviour
 {
-    public enum bossState { shooting, hurt, moving, ended };
-    public bossState currentState;
+    public enum bossStates { shooting, hurt, moving, ended };
+    public bossStates currentState;
     public Transform theBoss;
     public Animator anim;
     [Header("Movement")]
@@ -18,22 +18,22 @@ public class BossTankController : MonoBehaviour
     private float mineCounter;
     [Header("Shooting")]
     public GameObject bullet;
+    public Transform firePoint;
     public float timeBetweenShots;
     private float shotCounter;
-    public Transform firePoint;
     [Header("Hurt")]
     public float hurtTime;
     private float hurtCounter;
     public GameObject hitBox;
     [Header("Health")]
-    public int health;
-    public GameObject explosion;
+    public int health = 5;
+    public GameObject explosion, winPlatform;
     private bool isDefeated;
     public float shotSpeedUp, mineSpeedUp;
     // Start is called before the first frame update
     void Start()
     {
-        currentState = bossState.shooting;
+        currentState = bossStates.shooting;
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class BossTankController : MonoBehaviour
     {
         switch (currentState)
         {
-            case bossState.shooting:
+            case bossStates.shooting:
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0)
                 {
@@ -50,24 +50,26 @@ public class BossTankController : MonoBehaviour
                     newBullet.transform.localScale = theBoss.localScale;
                 }
                 break;
-            case bossState.hurt:
+            case bossStates.hurt:
                 if (hurtCounter > 0)
                 {
                     hurtCounter -= Time.deltaTime;
                     if (hurtCounter <= 0)
                     {
-                        currentState = bossState.moving;
+                        currentState = bossStates.moving;
                         mineCounter = 0;
                         if (isDefeated)
                         {
                             theBoss.gameObject.SetActive(false);
                             Instantiate(explosion, theBoss.position, theBoss.rotation);
-                            currentState = bossState.ended;
+                            winPlatform.SetActive(true);
+                            AudioManager.instance.StopBossMusic();
+                            currentState = bossStates.ended;
                         }
                     }
                 }
                 break;
-            case bossState.moving:
+            case bossStates.moving:
                 if (moveRight)
                 {
                     theBoss.position += new Vector3(moveSpeed * Time.deltaTime, 0f, 0f);
@@ -81,7 +83,6 @@ public class BossTankController : MonoBehaviour
                 else
                 {
                     theBoss.position -= new Vector3(moveSpeed * Time.deltaTime, 0f, 0f);
-
                     if (theBoss.position.x < leftPoint.position.x)
                     {
                         theBoss.localScale = new Vector3(-1f, 1f, 1f);
@@ -97,21 +98,23 @@ public class BossTankController : MonoBehaviour
                 }
                 break;
         }
-    }
 
-    private void EndMovement()
-    {
-        currentState = bossState.shooting;
-        shotCounter = 0f;
-        anim.SetTrigger("stopMoving");
-        hitBox.SetActive(true);
+#if UNITY_EDITOR
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeHit();
+        }
+
+#endif
     }
 
     public void TakeHit()
     {
-        currentState = bossState.hurt;
+        currentState = bossStates.hurt;
         hurtCounter = hurtTime;
-        anim.SetTrigger("hit");
+        anim.SetTrigger("Hit");
+        AudioManager.instance.PlaySFX(0);
         BossTankMine[] mines = FindObjectsOfType<BossTankMine>();
         if (mines.Length > 0)
         {
@@ -120,7 +123,9 @@ public class BossTankController : MonoBehaviour
                 foundMine.Explode();
             }
         }
+
         health--;
+
         if (health <= 0)
         {
             isDefeated = true;
@@ -132,4 +137,11 @@ public class BossTankController : MonoBehaviour
         }
     }
 
+    private void EndMovement()
+    {
+        currentState = bossStates.shooting;
+        shotCounter = 0f;
+        anim.SetTrigger("StopMoving");
+        hitBox.SetActive(true);
+    }
 }
