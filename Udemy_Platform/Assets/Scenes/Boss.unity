@@ -181,6 +181,11 @@ MonoBehaviour:
   firePoint: {fileID: 78393411}
   hurtTime: 1
   hitBox: {fileID: 1212909093}
+  health: 1
+  explosion: {fileID: 4456549572884168672, guid: da643a6edf7c78744bf74f9e69129060,
+    type: 3}
+  shotSpeedUp: 1.2
+  mineSpeedUp: 1.2
 --- !u!1 &78393410
 GameObject:
   m_ObjectHideFlags: 0
